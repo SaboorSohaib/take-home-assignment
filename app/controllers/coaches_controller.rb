@@ -4,14 +4,16 @@ class CoachesController < ApplicationController
   end
 
   def show
-    @coach = Coach.find(params[:id])
+    @user = User.find(params[:user_id])
+    @coach = @user.coaches.find(params[:id])
     @meeting = @coach.meetings
   end
 
   def create
-    @coach = Coach.new(coach_params)
+    @user = User.find(params[:user_id])
+    @coach = @user.coaches.new(coach_params)
     if @coach.save
-      redirect_to @coach
+      redirect_to user_coaches_path(@user, @coach)
     else
       render :new
     end
