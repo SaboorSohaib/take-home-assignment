@@ -1,0 +1,13 @@
+<section>
+
+  <div>
+    <% @users.each do |user| %>
+        <div>
+            <h3><%= user.name %></h3>
+            <div><%= user.email %></div>
+        </div>
+        <%= link_to  "See All Coaches",  "users/#{user.id}/coaches/" %>
+    <% end %>
+
+  </div>
+</section>

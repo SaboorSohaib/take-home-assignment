@@ -1,0 +1,24 @@
+<section>
+    <%= link_to "Back", users_path %>
+    <%= link_to  "Add New Coach",  new_user_coach_path %>
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Time Zone</th>
+                <th>Week Day</th>
+                <th>Aavailable At</th>
+                <th>Aavailable Until</th>
+            </tr>
+            <% @coaches.each do |coach| %>
+                <tr>
+                <td><%= coach.name %></td>
+                <td><%= coach.time_zone %></td>
+                <td><%= coach.week_day %></td>
+                <td><%= coach.available_at.strftime("%H:%M %p") %></td>
+                <td><%= coach.available_until.strftime("%H:%M %p") %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+</section>
