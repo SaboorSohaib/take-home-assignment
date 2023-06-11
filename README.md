@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>Budget Tracker</b></h3>
+  <h3><b>Appointment Sechedular</b></h3>
 
 </div>
 
